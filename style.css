@@ -449,9 +449,15 @@ background: linear-gradient(135deg, rgb(56, 178, 172), rgb(129, 230, 217));
 .list__features{
   list-style-type: none;
 }
+.list__feature{
+  font-weight: 500;
+}
 
 .list__feature, .values__list:not(:last-child){
   padding-bottom: 24px;
+}
+.list__feature--personal,.list__feature--enterprise{
+  color: #718096;
 }
 .list__btn{
   margin: 24px 0;
