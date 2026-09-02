@@ -367,3 +367,118 @@ margin-left: 16px;
 .values__image{
   padding: 24px;
 }
+.values__image--wrapper{
+  width: 55%;
+}
+/* PRICING */
+.pricing__description{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+}
+.pricing__row{
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.pricing__para{
+  text-align: center;
+  margin-bottom: 80px;
+}
+.pricing__list{
+  display: flex;
+  justify-content: center;
+  z-index: 1;
+}
+.pricing__item{
+  text-align: center;
+  width: calc(100% / 3);
+  border: 1px solid rgb(229, 231, 235);
+  margin: 0 28px;
+  border-radius: 10px;
+  box-shadow: 0 1px 5px rgba(138, 67, 67, 0.1);
+}
+.pricing__item:nth-child(1) .pricing__item--middle, .pricing__item:nth-child(3) .pricing__item--middle{ 
+  border-top: 1px solid rgb(229, 231, 235);
+  border-bottom: 1px solid rgb(229, 231, 235);
+}
+.pricing__item:nth-child(2) .pricing__item--middle{
+  border-top: 1px solid rgb(102, 126, 234);
+  border-bottom: 1px solid rgb(102, 126, 234);  
+}
+.pricing__item--personal, .pricing__item--enterprise{
+  background-color: rgb(255 255 255);
+}
+.pricing__item--business{
+  background: linear-gradient(135deg, rgb(76, 81, 191), rgb(102, 126, 234));
+}
+.pricing__strip{
+  display: flex;
+  border-radius: 10px 10px 0 0;
+  width: 100%;
+  height: 8px;
+  top: 0;
+  }
+.pricing__strip--personal{
+background: linear-gradient(135deg, rgb(56, 178, 172), rgb(129, 230, 217));
+}
+.pricing__strip--enterprise{
+  background: linear-gradient(135deg, rgb(245, 101, 101), rgb(254, 178, 178));
+}
+
+.list__title{
+  padding-top: 40px;
+}
+
+.list__title--business, .list__price--business, .list__frequency--business, .list__audience--business, .list__feature--business{
+  color: white;
+}
+.list__price{
+  padding: 20px 0;
+  font-size: 46px
+}
+.list__frequency{
+  margin-bottom: 40px;
+}
+.list__audience{
+  margin-top: 32px;
+  margin-bottom: 24px;
+}
+.list__features{
+  list-style-type: none;
+}
+
+.list__feature, .values__list:not(:last-child){
+  padding-bottom: 24px;
+}
+.list__btn{
+  margin: 24px 0;
+  font-size: 14px;
+  font-weight: 700;
+  padding: 8px 48px;
+}
+.list__btn--business{
+  color: #6415ff;
+  background-color: #fff;
+}
+.list__btn--personal{
+  background: linear-gradient(135deg, rgb(56, 178, 172), rgb(129, 230, 217));
+}
+.list__btn--enterprise{
+  background: linear-gradient(135deg, rgb(245, 101, 101) 0%, rgb(254, 178, 178))
+}
+.pricing__blob{
+  position: absolute;
+  z-index: 0;
+  bottom: -35%;
+  left: -10%;
+  width: 25%;
+  opacity: 0.5;
+}
+.list__title--personal, .list__title--enterprise, .list__price--personal, .list__price--enterprise, .list__audience--personal, .list__audience--enterprise{
+  color: #000;}
+  .list__frequency--personal, .list__frequency--enterprise{
+    color: #a0aec0;
+  }
