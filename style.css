@@ -400,6 +400,9 @@ margin-left: 16px;
   border-radius: 10px;
   box-shadow: 0 1px 5px rgba(138, 67, 67, 0.1);
 }
+.pricing__item--personal, .pricing__item--enterprise{
+  background-color: rgb(255 255 255);
+}
 .pricing__item:nth-child(1) .pricing__item--middle, .pricing__item:nth-child(3) .pricing__item--middle{ 
   border-top: 1px solid rgb(229, 231, 235);
   border-bottom: 1px solid rgb(229, 231, 235);
@@ -408,11 +411,10 @@ margin-left: 16px;
   border-top: 1px solid rgb(102, 126, 234);
   border-bottom: 1px solid rgb(102, 126, 234);  
 }
-.pricing__item--personal, .pricing__item--enterprise{
-  background-color: rgb(255 255 255);
-}
+
 .pricing__item--business{
   background: linear-gradient(135deg, rgb(76, 81, 191), rgb(102, 126, 234));
+  position: relative;
 }
 .pricing__strip{
   display: flex;
@@ -421,19 +423,34 @@ margin-left: 16px;
   height: 8px;
   top: 0;
   }
-.pricing__strip--personal{
+.pricing__item--business::before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    padding-top: 8px;
+    display: flex;
+    border-radius: 10px 10px 0 0;
+    background-color: transparent;
+  }
+.pricing__item--personal .pricing__strip, .pricing__item--personal .list__btn{
 background: linear-gradient(135deg, rgb(56, 178, 172), rgb(129, 230, 217));
 }
-.pricing__strip--enterprise{
+.pricing__item--enterprise .pricing__strip, .pricing__item--enterprise .list__btn{
   background: linear-gradient(135deg, rgb(245, 101, 101), rgb(254, 178, 178));
 }
 
 .list__title{
   padding-top: 40px;
 }
-
-.list__title--business, .list__price--business, .list__frequency--business, .list__audience--business, .list__feature--business{
-  color: white;
+.pricing__item--business .list__title{
+  margin-top: 8px;
+}
+.pricing__item--business .list__title,
+.pricing__item--business .list__price,
+.pricing__item--business .list__frequency,
+.pricing__item--business .list__audience,
+.pricing__item--business .list__feature{
+  color: #f7fafc;
 }
 .list__price{
   padding: 20px 0;
@@ -453,27 +470,18 @@ background: linear-gradient(135deg, rgb(56, 178, 172), rgb(129, 230, 217));
   font-weight: 500;
 }
 
-.list__feature, .values__list:not(:last-child){
+.list__feature{
   padding-bottom: 24px;
-}
-.list__feature--personal,.list__feature--enterprise{
-  color: #718096;
-}
+} 
 .list__btn{
   margin: 24px 0;
   font-size: 14px;
   font-weight: 700;
   padding: 8px 48px;
 }
-.list__btn--business{
+.pricing__item--business .list__btn{
   color: #6415ff;
   background-color: #fff;
-}
-.list__btn--personal{
-  background: linear-gradient(135deg, rgb(56, 178, 172), rgb(129, 230, 217));
-}
-.list__btn--enterprise{
-  background: linear-gradient(135deg, rgb(245, 101, 101) 0%, rgb(254, 178, 178))
 }
 .pricing__blob{
   position: absolute;
@@ -483,8 +491,18 @@ background: linear-gradient(135deg, rgb(56, 178, 172), rgb(129, 230, 217));
   width: 25%;
   opacity: 0.5;
 }
-.list__title--personal, .list__title--enterprise, .list__price--personal, .list__price--enterprise, .list__audience--personal, .list__audience--enterprise{
-  color: #000;}
-  .list__frequency--personal, .list__frequency--enterprise{
-    color: #a0aec0;
+ 
+  .pricing__item--enterprise .list__title,
+  .pricing__item--enterprise .list__price,
+  .pricing__item--enterprise .list__audience,
+  .pricing__item--personal .list__frequency, .pricing__item--personal .list__audience, .pricing__item--personal .list__title, .pricing__item--personal .list__price{
+    color: #1a202c;
   }
+  
+.pricing__item--personal .list__frequency, .pricing__item--enterprise .list__frequency{
+  color: #a0aec0;
+}
+.pricing__item--personal .list__feature,
+.pricing__item--enterprise .list__feature{
+  color: #718096;
+}
