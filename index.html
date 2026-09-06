@@ -6,6 +6,7 @@
   <title>Module 3 Final Project</title>
   <link rel="stylesheet" href="style.css">
   <script src="https://kit.fontawesome.com/a1e44b9722.js" crossorigin="anonymous"></script>
+  <script src="index.js"></script>
 </head>
 <body>
   <section id="landing">
@@ -23,7 +24,25 @@
         <a class="nav__link login" href="">Login</a>
         
         <a class="nav__link nav__link--primary" href="">Sign Up</a>
-      </div>
+          </div>
+           <button class="menu__btn" href="" onclick="openMenu"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="3" y1="12" x2="21" y2="12"></line>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+          </button>
+          <div class="menu__backdrop">
+            <button class="menu__btn menu__btn--close" onclick="closeMenu"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="light___StyledCloseIcon-lj69nl-14 fASujC">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg></button>
+          <a class="menu__link" href="">About</a>
+          <a class="menu__link" href="">Blog</a>
+          <a class="menu__link" href="#pricing">Pricing</a>
+          <a class="menu__link" href="">Contact Us</a>
+          <a class="menu__link" href="">Login</a>
+          <a class="menu__link" href="">Sign Up</a>
+          </div>
       </div>
     </nav>
     <header>
@@ -265,7 +284,6 @@
           </div>
           <div class="pricing__list">
             <div class="pricing__item pricing__item--personal">
-              <div class="pricing__strip"></div>
               <h3 class="list__title">PERSONAL</h3>
               <h2 class="list__price">$17.99</h2>
               <h4 class="list__frequency">MONTHLY</h4>
@@ -278,7 +296,9 @@
                 <li class="list__feature">Basic Assistance</li>
               </ul>
               </div>
+              <div class="list__bottom">
               <button class="list__btn">BUY NOW</button>
+              </div>
             </div>
             <div class="pricing__item pricing__item--business">
               <h3 class="list__title">BUSINESS</h3>
@@ -293,10 +313,11 @@
                 <li class="list__feature">Priority Assistance</li>
               </ul>
               </div>
+              <div class="list__bottom">
               <button class="list__btn">BUY NOW</button>
+              </div>
             </div>
             <div class="pricing__item pricing__item--enterprise">
-              <div class="pricing__strip"></div>
               <h3 class="list__title">ENTERPRISE</h3>
               <h2 class="list__price">$57.99</h2>
               <h4 class="list__frequency">MONTHLY</h4>
@@ -309,7 +330,10 @@
                 <li class="list__feature">Personal Assistance</li>
               </ul>
               </div>
+              <div class="list__bottom">
               <button class="list__btn">BUY NOW</button>
+              </div>
+            </div>
             </div>
           </div>
           <svg width="600" height="600" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg" class="pricing__blob">
@@ -322,7 +346,7 @@
     </section>
     <section id="testimonials">
         <div class="container">
-          <div class="row">
+          <div class="row testimonials__row">
             <div class="testimonials__image--wrapper"><img src="./assets/love-illustration.c759090fa833369ad6ffb6eb19cacb3e.svg"></div>
             <div class="testimonials__description">
             <div class="section__tag">TESTIMONIALS</div>
@@ -366,7 +390,7 @@
     </section>
     <section id="start">
       <div class="container">
-        <div class="row">
+        <div class="row start__row">
           <div class="start__container">
             <h2 class="start__text">Developers all over the world are happily using Treact.</h2>
             <div class="btn__container">
