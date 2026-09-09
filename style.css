@@ -182,14 +182,22 @@ nav {
   right: 20px;
   top: 20px;
   display: none;
-  
+}
+.menu__btn--img{
+  color: #243e63;
+  transition: color 0.2s ease;
 }
 .menu__btn--img:hover {
-  stroke: #6415ff;
+  color: #6415ff;
 }
-.menu__btn--close {
+.menu__btn--close{
   display: none;
 }
+.menu__link{
+  position: absolute;
+  display: none; 
+}
+
 .close__btn:hover{
   fill: #6415ff;
 }
@@ -925,13 +933,9 @@ footer {
     align-items: center;
     justify-content: center;
     transform: translateX(-1rem);
-    display: flex;
-
   }
-
-  .menu__btn--close{
-   display: none;
-
+  .menu__btn--open{
+    display: flex;
   }
   .header__row{
     flex-direction: column;
