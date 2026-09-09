@@ -63,7 +63,9 @@ a {
   text-decoration: none;
   color: #243e63;
 }
-
+#landing{
+  padding: 0 2rem;
+}
 .header__email--btn,
 .quality__description--btn,
 .nav__link--primary,
@@ -162,6 +164,14 @@ nav {
 }
 .menu__backdrop {
   position: relative;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  height: 50vh;
+  border-radius: 10px;
+  border: 
 }
 .menu__btn {
   border: none;
@@ -171,9 +181,17 @@ nav {
   position: absolute;
   right: 20px;
   top: 20px;
+  display: none;
+  
+}
+.menu__btn--img:hover {
+  stroke: #6415ff;
 }
 .menu__btn--close {
   display: none;
+}
+.close__btn:hover{
+  fill: #6415ff;
 }
 .menu__link {
   display: none;
@@ -200,9 +218,10 @@ nav {
 .header__description--para {
   line-height: 1.5;
   font-size: 18px;
-  font-weight: 400;
+  font-weight: 400;f
   margin: 1rem 0;
   color: #243e63;
+  padding: 2rem 0;
 }
 .header__email {
   width: 100%;
@@ -271,6 +290,9 @@ nav {
 .header__img--wrapper {
   max-width: 752px;
   width: 100%;
+  padding-left: 3rem;
+  bottom: 0;
+  right: 0;
 }
 /* FEATURES */
 
@@ -901,7 +923,14 @@ footer {
   }
   .menu__btn{
     align-items: center;
-    transform: translateX(-.5rem) translateY(-.3rem);
+    justify-content: center;
+    transform: translateX(-1rem);
+    display: flex;
+
+  }
+
+  .menu__btn--close{
+   display: none;
 
   }
   .header__row{
@@ -923,6 +952,7 @@ footer {
   .header__description--para{
     font-size: 1rem;
     text-align: center;
+    padding: 1rem 0;
   }
   .header__email--input {
     border-width: 2px;
