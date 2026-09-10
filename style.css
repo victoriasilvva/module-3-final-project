@@ -6,6 +6,7 @@
 }
 html {
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 h1,
 h2,
@@ -162,6 +163,19 @@ nav {
 .nav__link--primary:hover::after {
   display: none;
 }
+
+.menu__btn {
+  border: none;
+  background-color: transparent;
+  height: 24px;
+  width: 24px;
+  position: absolute;
+  right: 1.6rem;
+  top: 1.6rem;
+  display: flex;
+  z-index: 2;
+  cursor: pointer;
+}
 .menu__backdrop {
   position: relative;
   position: absolute;
@@ -169,40 +183,68 @@ nav {
   bottom: 0;
   right: 0;
   left: 0;
+  transform: translateX(110%);
   height: 50vh;
   border-radius: 10px;
-}
-.menu__btn {
-  border: none;
-  background-color: transparent;
-  height: 24px;
-  width: 24px;
-  position: absolute;
-  right: 20px;
-  top: 20px;
-  display: none;
+  background-color: #fff;
+  border: 1px solid rgb(229, 231, 235);
+  z-index: 3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  visibility: hidden;
+  opacity: 0;
+  transition: transform 300ms ease;
 }
 .menu__btn--img{
   color: #243e63;
   transition: color 0.2s ease;
 }
-.menu__btn--img:hover {
+.menu__btn--open:hover .menu__btn--img{
   color: #6415ff;
 }
+.menu--open .menu__backdrop{
+  display: flex;
+  transform: translateX(0%);
+  visibility: visible;
+  opacity: 1;
+}
 .menu__btn--close{
-  display: none;
+  display: flex;
+  cursor: pointer;
 }
-.menu__link{
-  position: absolute;
-  display: none; 
-}
-
 .close__btn:hover{
-  fill: #6415ff;
+  color: #243e63;
+}
+.menu__list{
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+}
+.menu__list:not(:last-child){
+    padding: .8rem;
+
 }
 .menu__link {
-  display: none;
-  position: absolute;
+  display: flex;
+  z-index: 4;
+  font-weight: 600;
+  color: #1a202c;
+  font-size: 1.1rem;
+}
+.menu__link--primary{
+    height: calc(100% - 16px);
+    border-radius: 500px;
+    width: 160px;
+    border: none;
+    background-color: #6415ff;
+    color: #fff;
+    font-weight: 700;
+    font-size: 16px;
+    padding: 1rem .5rem;
+    justify-content: center;
+    margin-top: .8rem;
+    max-width: 8rem;
 }
 /* LANDING */
 #landing {
@@ -920,7 +962,6 @@ footer {
 /* TABLETS, LARGE SMARTPHONES, SMALL LAPTOPS */
 @media (max-width: 768px) {
   .nav__row{
-    padding: 0 2rem;
     justify-content: space-between;
     align-items: center;
   }
@@ -930,11 +971,13 @@ footer {
   }
   .menu__btn{
     align-items: center;
-    justify-content: center;
-    transform: translateX(-1rem);
+    transform: translateX(.5rem) translateY(-.5rem);
   }
   .menu__btn--open{
-    display: flex;
+    display: block;
+  }
+  .menu__backdrop{
+    transform: translateX(110%);
   }
   .header__row{
     flex-direction: column;

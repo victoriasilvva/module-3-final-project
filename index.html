@@ -25,23 +25,26 @@
         
         <a class="nav__link nav__link--primary" href="">Sign Up</a>
           </div>
-           <button class="menu__btn git " href="" onclick="openMenu"><svg class="menu__btn--img" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+           <button class="menu__btn menu__btn--open" href="" onclick="openMenu()"><svg class="menu__btn--img" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <line x1="3" y1="12" x2="21" y2="12"></line>
               <line x1="3" y1="6" x2="21" y2="6"></line>
               <line x1="3" y1="18" x2="21" y2="18"></line>
             </svg>
           </button>
+          
           <div class="menu__backdrop">
-            <button class="menu__btn menu__btn--close" onclick="closeMenu"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="menu__btn--img">
+            <button class="menu__btn menu__btn--close" onclick="closeMenu()"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="menu__btn--img">
             <line x1="18" y1="6" x2="6" y2="18"></line>
             <line x1="6" y1="6" x2="18" y2="18"></line>
           </svg></button>
-          <a class="menu__link" href="">About</a>
-          <a class="menu__link" href="">Blog</a>
-          <a class="menu__link" href="#pricing">Pricing</a>
-          <a class="menu__link" href="">Contact Us</a>
-          <a class="menu__link" href="">Login</a>
-          <a class="menu__link" href="">Sign Up</a>
+          <ul>
+          <li class="menu__list"><a class="menu__link" href="">About</a></li>
+          <li class="menu__list"><a class="menu__link" href="">Blog</a></li>
+         <li class="menu__list"><a class="menu__link" href="#pricing">Pricing</a></li>
+          <li class="menu__list"><a class="menu__link" href="">Contact Us</a></li>
+          <li class="menu__list"><a class="menu__link" href="">Login</a></li>
+          <li class="menu__list"><a class="menu__link menu__link--primary" href="">Sign Up</a></li>
+          </ul>
           </div>
       </div>
     </nav>
