@@ -413,6 +413,7 @@ nav {
 }
 .quality__description--btn {
   transition: all 300ms ease;
+  font-weight: 600;
 }
 .quality__img--wrapper {
   position: relative;
@@ -423,15 +424,17 @@ nav {
   border-radius: 4px;
   z-index: 3;
   width: 100%;
+  position: relative;
 }
 .quality__grid {
   width: 100%;
   max-width: 84px;
   position: absolute;
   fill: rgb(100, 21, 255);
-  bottom: -15%;
+  bottom: 0;
   right: 0;
-  transform: translateX(60%);
+  transform: translateX(50%) translateY(45%);
+  z-index: 1;
 }
 /* STEPS */
 
@@ -441,16 +444,18 @@ nav {
   position: relative;
 }
 .steps__img {
-  z-index: 1;
+  z-index: 2;
+  position: relative;
 }
 .steps__grid {
-  position: absolute;
   width: 24%;
   fill: rgb(100, 21, 255);
   opacity: .1;
-  bottom: -14px;
-  left: 38%;
-  z-index: 0;
+  bottom: 0;
+  left: 0;
+  transform: translateX(156%) translateY(50%);
+  z-index: 1;
+  position: absolute;
 }
 .steps__description {
   max-width: 50%;
@@ -533,6 +538,7 @@ nav {
 .values__btn {
   margin-top: 48px;
   transition: all 300ms ease;
+  font-weight: 600;
 }
 .values__image {
   padding: 24px;
@@ -560,15 +566,15 @@ nav {
   max-width: 1200px;
 }
 
-.pricing__para {
+.pricing__description .section__para{
   text-align: center;
-  margin-bottom: 80px;
 }
 .pricing__list {
   display: flex;
   flex-direction: row;
   justify-content: center;
   z-index: 1;
+  margin-top: 2.5rem;
 }
 .pricing__item {
   display: flex;
@@ -581,18 +587,21 @@ nav {
   box-shadow: 0 1px 5px rgba(138, 67, 67, 0.1);
   position: relative;
 }
+.pricing__item--middle{
+    width: 100%;
+  }
 .pricing__item--personal,
 .pricing__item--enterprise {
   background-color: rgb(255 255 255);
 }
 .pricing__item:nth-child(1) .pricing__item--middle,
-.pricing__item:nth-child(3) .pricing__item--middle {
-  border-top: 1px solid rgb(229, 231, 235);
-  border-bottom: 1px solid rgb(229, 231, 235);
+.pricing__item:nth-child(4) .pricing__item--middle {
+  border-top: 2px solid rgb(229, 231, 235);
+  border-bottom: 2px solid rgb(229, 231, 235);
 }
-.pricing__item:nth-child(2) .pricing__item--middle {
-  border-top: 1px solid rgb(102, 126, 234);
-  border-bottom: 1px solid rgb(102, 126, 234);
+.pricing__item:nth-child(3) .pricing__item--middle {
+  border-top: 2px solid rgb(102, 126, 234);
+  border-bottom: 2px solid rgb(102, 126, 234);
 }
 
 .pricing__item--business {
@@ -669,14 +678,18 @@ nav {
   color: #6415ff;
   background-color: #fff;
 }
+.pricing__item--personal{
+  position: relative;
+  z-index: 2;
+}
 .pricing__blob {
   position: absolute;
-  z-index: 0;
+  z-index: 1;
   bottom: 0;
   left: 0;
-  transform: translateX(-20%) translateY(40%);
+  transform: translateX(-50%) translateY(50%);
   width: 25%;
-  opacity: 0.5;
+  opacity: 0.25;
 }
 
 .pricing__item--enterprise .list__title,
@@ -1057,21 +1070,26 @@ footer {
     margin: 0 auto;
     align-items: center;
   }
-  .quality__grid{
-    top: 0;
-    transform: translateY(300%) translateX(-20%);
+  .quality__description{
+    margin: 0;
   }
+  
   .quality__description{
     text-align: center;
     width: 100%;
     max-width: fit-content;
-    padding: 0 3.4rem;
+    padding: 0 2rem;
+    margin-top: 4rem;
   }
   .quality__description .section__title{
-    font-size: 2.5rem;
+    font-size: 2.4rem;
   }
   .quality__description--para{
     font-size: .9rem;
+    padding: 0 .4rem;
+  }
+  #steps{
+    padding: 0 32px;
   }
   .steps__row{
     display: flex;
@@ -1082,23 +1100,26 @@ footer {
     max-width: 768px;
     width: 75%;
     align-items: center;
+    margin: 0 auto;
   }
   .steps__grid{
-    height: 6rem;
-    width: 6rem;
-    margin: 0 auto;
-    transform: translateY(36%) translateX(20%);
+    width: 20%;
+    transform: translateX(200%) translateY(50%);
   }
   .steps__description{
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 6rem;
+    margin-top: 5rem;
     padding: 0;
-  }
+    width: 100%;
+    max-width: 600px;
+    }
   .steps__description .section__title{
     text-align: center;
     font-size: 2.2rem;
+    width: 100%;
+    margin-bottom: 1rem;
   }
   .step{
     display: flex;
@@ -1122,6 +1143,9 @@ footer {
     max-width: 20rem;
     text-align: center;
     line-height: 2;
+  }
+  #values{
+    margin-bottom: 80px;
   }
   .values__row{
     display: flex;
@@ -1171,14 +1195,14 @@ footer {
   }
   .pricing__container{
     position: relative;
+    padding-top: 0;
   }
   .pricing__description .section__title{
-    padding: 2rem 4rem;
+    padding: 0 4rem;
     text-align: center;
   }
   .pricing__description .section__para{
     font-size: 16px;
-
   }
   .pricing__list{
     margin: 0 10px;
@@ -1188,26 +1212,28 @@ footer {
     flex-wrap: wrap;
     gap: 40px 20px;
   }
-  .pricing__item--business{
-    margin: 0;
-  }
   .pricing__item{
     align-items: center;
     width: calc(50% - 20px);
     max-width: 24rem;
   }
- 
+
+  .pricing__item--business{
+    margin: 0;
+  }
+ .pricing__item--enterprise{
+  position: relative;
+  z-index: 2;
+ }
   .list__btn{
     margin: 24px auto;
   }
   .pricing__blob{
-    bottom: 0;
-    left:0;
-    height: 20rem;
-    width: 20rem;
-    z-index: 0;
     position: absolute;
-    transform: translateX(8%) translateY(30%);
+    bottom: 0;
+    left: 0;
+    transform: translateX(60%) translateY(50%);
+    z-index: 1;
   }
   .testimonials__row{
     display: flex;
@@ -1352,6 +1378,9 @@ footer {
 
 /* SMALL PHONES */
 @media (max-width: 480px) {
+  section{
+    padding: 0 32px;
+  }
   .nav__row{
     justify-content: space-between;
   }
@@ -1396,11 +1425,12 @@ footer {
   }
   .section__title {
     text-align: center;
-    font-size: 2.3rem;
+    font-size: 2.1rem;
     font-weight: 900;
   }
   .section__para {
     font-size: .9rem;
+    margin-bottom: 4rem;
   }
   .feature{
     display: flex;
@@ -1410,6 +1440,8 @@ footer {
   .feature__description{
     text-align: center;
     margin: 0;
+    width: 100%;
+    max-width: 360px;
   }
 .feature__img--wrapper{
   margin: 0;
@@ -1418,16 +1450,66 @@ footer {
   margin-top: 1rem;
   margin-bottom: .5rem;
 }
-#quality{
-  padding-top: 0;
-}
 .quality__img--wrapper{
+  margin: 0;
+}
+.quality__description{
   padding: 0;
 }
-.quality__grid{
-  bottom: 0;
-  right: 0;
-  transform: translateX(2rem) translateY(11.4rem);
+.quality__description .section__title{
+  font-size: 1.8rem;
+}
+.quality__description--para{
+  padding: 0;
+  width: 100%;
+}
+.quality__description--para{
+  line-height: 1.5;
+}
+.quality__description--btn{
+  height: 3rem;
+}
+.steps__img--wrapper{
+  margin: 0;
+  width: 100%;
+}.steps__description .section__title{
+  font-size: 1.9rem;
+  margin-bottom: 1.5rem;
+}
+.values__image--wrapper{
+  margin: 0;
+  width: 100%;
+}
+.values__image{
+  padding: 0;
+}
+.values__description--wrapper{
+  margin-top: 4rem;
+}
+.values__description{
+  padding: 0;
+}
+.values__description .section__title{
+  font-size: 1.9rem;
+  padding: 1rem 0;
+}
+.values__description--para{
+  margin: 1rem
+}
+.values__list--wrapper{
+  margin-top: 1.5rem;
+  padding: 2rem;
+}
+.values__btn{
+  margin-top: 1.2rem;
+  height: 3rem;
+  }
+.pricing__description .section__tag{
+  margin-top: 2rem;
+}
+.pricing__description .section__title{
+  padding: 1rem 0;
+  font-size: 2.3rem
 }
   .pricing__row {
     align-items: center;
@@ -1435,17 +1517,21 @@ footer {
   .pricing__list {
     flex-direction: column;
     align-items: center;
-    padding: 0 80px;
+    position: relative;
+    width: 100%;
   }
   .pricing__item {
     width: 100%;
-    margin: 0 5px;
   }
   .pricing__item:not(:last-child) {
-    margin-bottom: 60px;
+    margin-bottom: 1.6rem;
   }
   .pricing__strip {
     width: 100%;
+  }
+  .pricing__blob{
+    width: 70%;
+    transform: translateX(-50%) translateY(50%);
   }
   .list__price {
     font-size: 36px;
@@ -1453,12 +1539,22 @@ footer {
   .pricing__description {
     padding: 0 20px;
   }
+  .pricing__description .section__para{
+    font-size: .85rem
+  }
   .list__bottom {
     display: flex;
     align-items: center;
   }
-  .list__btn {
+  .list__bottom{
     width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .list__btn {
+    width: 75%;
+    margin: 2rem 2rem;
+    text-align: center;
   }
   .testimonials__row {
     display: flex;
@@ -1469,5 +1565,67 @@ footer {
   }
   .testimonials__description {
     width: 100%;
+  }
+  .testimonials__description .section__tag{
+    margin-top: 4rem;
+  }
+  .testimonials__description .section__title{
+    font-size: 2rem
+  }
+  .testimonials__description .section__para{
+    padding: 0;
+  }
+  .star__container{
+    padding: 0;
+  }
+  .testimonials__para{
+    padding: 0;
+    margin-bottom: 2rem;
+  }
+  .testimonials__container{
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-height: 20rem;
+  }
+  .testimonials__img--wrapper{
+    height: 4rem;
+    width: 4rem;
+  }
+  .profiles__container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+  }
+  .profile{
+    margin: .5rem;
+  }
+  .arrows__container{
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+  .arrow{
+    margin: 0;
+  }
+  .start__container{
+    height: 100%;
+    max-height: 25rem;
+  }
+  .start__text{
+    font-size: 1.4rem;
+  }
+  .btn__container{
+    display: flex;
+    flex-direction: column;
+  }
+  .btns{
+    margin: 0;
+    font-size: .8rem;
+    padding: .6rem 1.5rem;
+  }
+  .start__btn{
+    margin-bottom: 1rem;
   }
 }
